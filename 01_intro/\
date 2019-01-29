@@ -1,0 +1,10 @@
+
+double :: [Integer] -> [Integer]
+double [] = []
+double [x] = [x]
+double (x:(y:zs)) = (2*x:y:(double zs)) 
+
+sumNumber :: [Integer] -> Integer
+sumNumber [] = 0
+sumNumber (x:xs) = (foldl (+) (map (digitToInt) xChars)) + (sumNumber xs)
+		where xChars = show x
